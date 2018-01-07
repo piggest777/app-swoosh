@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,6 +47,9 @@
                                 <state key="normal" title="GET STARTED">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9eG-Ac-lmN" kind="show" id="Ix2-bK-2hV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GO ALL IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWa-s8-4Vm">
                                 <rect key="frame" x="57.5" y="145" width="260" height="71.5"/>
@@ -154,6 +158,17 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6m-dm-ev5">
+                                <rect key="frame" x="16" y="20" width="44" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="7CU-d1-kXk"/>
+                                    <constraint firstAttribute="height" constant="33" id="SzL-UN-xJp"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="o6u-9M-72M" kind="unwind" unwindAction="unwinFromSkillVcWithUnvindSegue:" id="kUv-8c-OgR"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="3pf-5Y-kAl">
                                 <rect key="frame" x="0.0" y="40" width="375" height="80"/>
                                 <subviews>
@@ -176,11 +191,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cYM-AG-3bv" firstAttribute="leading" secondItem="DRZ-F7-g9e" secondAttribute="leading" id="6fp-eE-wRD"/>
+                            <constraint firstItem="B6m-dm-ev5" firstAttribute="leading" secondItem="AZ8-7B-Snk" secondAttribute="leadingMargin" id="JWl-R4-G6f"/>
                             <constraint firstItem="DRZ-F7-g9e" firstAttribute="bottom" secondItem="0VP-Tu-VUF" secondAttribute="bottom" constant="20" id="Sl4-dD-qzg"/>
                             <constraint firstItem="cYM-AG-3bv" firstAttribute="bottom" secondItem="DRZ-F7-g9e" secondAttribute="bottom" id="TbP-dz-HtP"/>
                             <constraint firstItem="cYM-AG-3bv" firstAttribute="trailing" secondItem="DRZ-F7-g9e" secondAttribute="trailing" id="X9g-OV-z1g"/>
                             <constraint firstItem="cYM-AG-3bv" firstAttribute="top" secondItem="AZ8-7B-Snk" secondAttribute="top" id="ZBV-To-DoR"/>
                             <constraint firstItem="DRZ-F7-g9e" firstAttribute="trailing" secondItem="3pf-5Y-kAl" secondAttribute="trailing" id="f2V-Gy-OWa"/>
+                            <constraint firstItem="B6m-dm-ev5" firstAttribute="top" secondItem="DRZ-F7-g9e" secondAttribute="top" id="hZH-Hk-8HD"/>
                             <constraint firstItem="0VP-Tu-VUF" firstAttribute="leading" secondItem="DRZ-F7-g9e" secondAttribute="leading" constant="16" id="jXO-Ai-2ed"/>
                             <constraint firstItem="DRZ-F7-g9e" firstAttribute="trailing" secondItem="ekO-HD-x3e" secondAttribute="trailing" constant="16" id="nBl-ci-BbH"/>
                             <constraint firstItem="ekO-HD-x3e" firstAttribute="top" secondItem="3pf-5Y-kAl" secondAttribute="bottom" constant="45" id="uFc-dj-NGx"/>
@@ -193,6 +210,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7M-XA-EpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="o6u-9M-72M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="829.60000000000002" y="116.49175412293854"/>
         </scene>
@@ -292,6 +310,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="29" height="24"/>
         <image name="beginnerBallerBG" width="414" height="736"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
         <image name="swooshLogo" width="119" height="20"/>
